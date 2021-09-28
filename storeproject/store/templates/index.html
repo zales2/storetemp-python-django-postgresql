@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
-     <h3>Store</h3>
+     {% for product in products %}
+          <div class="box">
+               <img src="/images/{{product.image}}" width="80%" height="auto">
+               <h3>{{product.name}}</h3>
+               <p>{{product.price}}</p>
+           </div>
+     {% endfor %}
 {% endblock content %}
